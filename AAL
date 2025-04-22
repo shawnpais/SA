@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hey, Smile!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://assets.onecompiler.app/43fjf3mzq/43fjdrpk5/WhatsApp%20Image%202025-04-22%20at%2011.51.00.jpeg') no-repeat center center fixed;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3em;
+      text-shadow: 2px 2px #f08;
+    }
+
+    .message {
+      background: rgb(0, 191, 255);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 400px;
+      text-align: center;
+      font-size: 1.2em;
+      margin: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff85c1;
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+      max-width: 80%;
+    }
+
+    .photo-gallery img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey,Albiii 😜</h1>
+  <div class="message" id="messageBox">
+    <!-- Leave your personal message here -->
+    <p>You’re stronger than you think, brighter than the stars, and loved more than you know!</p>
+  </div>
+  <button class="btn" onclick="cheerUp()">Click for a Smile</button>
+
+  <div class="photo-gallery">
+    <!-- Add your favorite pictures here -->
+    <img src="https://assets.onecompiler.app/43fjf3mzq/43fjdrpk5/WhatsApp%20Image%202025-04-22%20at%2011.32.45.jpeg" alt="Memory 1">
+    <img src="https://assets.onecompiler.app/43fjf3mzq/43fjdrpk5/WhatsApp%20Image%202025-04-22%20at%2011.32.20.jpeg" alt="Memory 2">
+    <img src="https://assets.onecompiler.app/43fjf3mzq/43fjdrpk5/WhatsApp%20Image%202025-04-22%20at%2011.32.04.jpeg" alt="Memory 3">
+  </div>
+
+  <div class="stars" id="starsContainer"></div>
+
+  <script>
+    // Create stars
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.getElementById('starsContainer').appendChild(star);
+    }
+
+    function cheerUp() {
+      const box = document.getElementById('messageBox');
+      const messages = [
+        "You're doing amazing, even if it doesn't feel like it.",
+        "Be happy always 😊 .",
+        "You're the sunshine after the rain.",
+        "Best friends like you are rare and precious.",
+        "This moment will pass, but our friendship is forever."
+      ];
+      box.innerHTML = `<p>${messages[Math.floor(Math.random() * messages.length)]}</p>`;
+    }
+  </script>
+</body>
+</html>
